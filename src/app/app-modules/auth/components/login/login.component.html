@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm">
+    <h3 class="text-center">Login</h3>
+
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+      <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <a [routerLink]="['/auth/register']">Register New User</a>
+    </div>
+   
+  </form>
+
+  <button (click)="loginUser()" class="btn btn-primary">Login</button>

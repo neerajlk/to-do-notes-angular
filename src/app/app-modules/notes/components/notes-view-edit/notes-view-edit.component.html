@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-10">
+      <h3 class="text-center">{{ pageTitle }} Note</h3>
+    </div>
+    <div class="col-2">
+      <button class="btn-primary" *ngIf="noteID" (click)="editNote()">Edit Note</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="noteForm">
+        <div class="form-group">
+          <label>Title</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="title"
+            placeholder="Enter title"
+          />
+          <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea
+            class="form-control"
+            formControlName="description"
+            placeholder="description"
+          ></textarea>
+        </div>
+        <div class="form-check">
+          <a [routerLink]="['/note']">Back to Note Listing</a>
+        </div>
+      </form>
+
+      <button (click)="addEditNote()" class="btn btn-primary">Save Note</button>
+    </div>
+  </div>
+</div>
