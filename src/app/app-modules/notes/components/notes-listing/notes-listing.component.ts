@@ -10,12 +10,20 @@ import { Router } from '@angular/router';
 export class NotesListingComponent implements OnInit {
   constructor(private notesService: NotesService, private router: Router) {}
   notes: any = [];
+  previousPage: number = 1;
+  total: number = 0;
+  pageSize: number = 10;
+  pageNumber: number = 1;
+
+
   ngOnInit(): void {
     this.getAllNotes()
   }
 
-  getAllNotes(payload={}){
-    this.notesService.getAllNotes({}).subscribe((res) => {
+  getAllNotes(){
+    let payload = {page:1,limit:10}
+    payload.page = this.pageNumber;
+    this.notesService.getAllNotes(payload).subscribe((res) => {
       this.notes = res;
     });
   }
@@ -32,5 +40,11 @@ export class NotesListingComponent implements OnInit {
 
   addNewNote(){
     this.router.navigate(['note', 'new']);
+  }
+
+  getDataByPage(page) {
+    this.pageNumber = page;
+    this.getAllNotes();
+    return page;
   }
 }

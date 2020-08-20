@@ -34,3 +34,4 @@
     </table>
   </div>
 </div>
+<pagination-controls class="text-right" *ngIf="notes.length !=0" (pageChange)="previousPage = getDataByPage($event)"></pagination-controls>
