@@ -49,7 +49,6 @@ export class NotesListingComponent implements OnInit {
   }
 
   getDataByPage(page) {
-    console.log(page);
     this.pageNumber = page;
     this.getAllNotes();
     return page;

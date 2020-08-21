@@ -44,7 +44,6 @@ export class NotesViewEditComponent implements OnInit {
 
   getNotebyId() {
     this.noteService.getNoteById(this.noteID).subscribe((res) => {
-      console.log(res);
       this.noteForm.patchValue({
         title: res['title'],
         description: res['description'],
