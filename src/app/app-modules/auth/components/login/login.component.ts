@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value)
     this.authService.login(this.loginForm.value).subscribe(res=>{
       localStorage.setItem('authorization',res['token'])
-      this.router.navigate(['note','list']);
+      this.router.navigateByUrl('/note/list');
     },err=>{
       alert('Invalid Crendentials')
     })

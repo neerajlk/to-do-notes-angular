@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,18 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  logoutvisibility: boolean = false;
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('authorization')) {
-      this.logoutvisibility = true;
-    } 
-  }
-
-  logout() {
-    localStorage.clear();
-    this.logoutvisibility = false;
-    this.router.navigate(['auth','login'])
   }
 }

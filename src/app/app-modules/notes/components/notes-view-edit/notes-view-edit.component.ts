@@ -24,10 +24,13 @@ export class NotesViewEditComponent implements OnInit {
     private route: ActivatedRoute,
     private noteService: NotesService
   ) {
+    if(!localStorage.getItem('authorization')){
+      this.router.navigateByUrl('/auth/login')
+    }
     this.route.params.subscribe((res) => {
       if (res.id) {
         this.noteID = res.id;
-        this.pageTitle = 'Edit';
+        this.pageTitle = 'View / Edit';
       }
     });
   }

@@ -9,6 +9,9 @@ import { NotesViewEditComponent } from './components/notes-view-edit/notes-view-
 
 import {NotesRoutingModule} from './notes.routing.module'
 
+import {CoreModule} from '../../core/core.module'
+
+
 @NgModule({
   declarations: [NotesListingComponent, NotesViewEditComponent],
   imports: [
@@ -16,7 +19,8 @@ import {NotesRoutingModule} from './notes.routing.module'
     NotesRoutingModule,
     ReactiveFormsModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CoreModule
   ]
 })
 export class NotesModule { }

@@ -4,7 +4,16 @@
       <h3 class="text-center">{{ pageTitle }} Note</h3>
     </div>
     <div class="col-2">
-      <button class="btn-primary" *ngIf="noteID" (click)="editNote()">Edit Note</button>
+      <div class="row">
+        <div class="col">
+          <button class="btn-primary" *ngIf="noteID" (click)="editNote()">
+            Edit Note
+          </button>
+        </div>
+        <div class="col">
+          <app-logout-button></app-logout-button>
+        </div>
+      </div>
     </div>
   </div>
 
